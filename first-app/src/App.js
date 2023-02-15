@@ -1,75 +1,102 @@
-import React from "react";
+import { useState } from "react";
+import AddForm from "./AddForm/AddForm";
+import Item from "./Item/Item";
+import Toolbar from "./Toolbar/Toolbar";
 
-class Item extends React.Component {
-  render() {
-    return (
-      <li>
-        {this.props.name},
-        ${this.props.price}
-      </li>
-    );
-  }
-}
+const App = (props) => {
+  let [items, setItems] = useState([
+    {
+      id: 1,
+      name: "Apple",
+      price: 0.99,
+    },
+    {
+      id: 2,
+      name: "Orange",
+      price: 0.89,
+    },
+  ]);
 
-class App extends React.Component {
-  state = {
-    items: [
+  let add = (name, price) => {
+    let id = items.length + 1;
+    setItems([
+      ...items,
       {
-        id: 1,
-        name: 'Apple',
-        price: 0.99,
+        id,
+        name,
+        price,
       },
-      {
-        id: 2,
-        name: "Orange",
-        price: 0.89,
-      }
-    ]
-  }
+    ]);
+  };
 
-  nameRef = React.createRef();
-  priceRef = React.createRef();
-
-  add = () => {
-    let id = this.state.items.length + 1;
-    let name = this.nameRef.current.value;
-    let price = this.priceRef.current.value;
-
-    this.setState({
-      items: [
-        ...this.state.items,
-        {
-          id,
-          name,
-          price
-        }
-      ]
-    });
-  }
-
-  render() {
-    return (
-      <div>
+  return (
+    <div>
+      <Toolbar>
         <h1>Hello React</h1>
-        <ul>
-          {
-            this.state.items.map(item => {
-              return (
-                <Item
-                  key={item.id}
-                  name={item.name}
-                  price={item.price}
-                />
-              );
-            })
-          }
-        </ul>
-        <input type="text" ref={this.nameRef} /> <br />
-        <input type="text" ref={this.priceRef} /> <br />
-        <button onClick={this.add}>Add</button>
-      </div>
-    );
-  }
-}
+        <h2>Component composition</h2>
+      </Toolbar>
+      <h1>Hello React</h1>
+      <ul>
+        {items.map((item) => {
+          return (
+            <Item key={item.id} name={item.name} price={item.price}></Item>
+          );
+        })}
+      </ul>
+      <AddForm add={add} />
+    </div>
+  );
+};
+
+// class App extends React.Component {
+//   state = {
+//     items: [
+//       {
+//         id: 1,
+//         name: "Apple",
+//         price: 0.99,
+//       },
+//       {
+//         id: 2,
+//         name: "Orange",
+//         price: 0.89,
+//       },
+//     ],
+//   };
+
+//   add = (name, price) => {
+//     let id = this.state.items.length + 1;
+//     this.setState({
+//       items: [
+//         ...this.state.items,
+//         {
+//           id,
+//           name,
+//           price,
+//         },
+//       ],
+//     });
+//   };
+
+//   render() {
+// return (
+//   <div>
+//     <Toolbar>
+//       <h1>Hello React</h1>
+//       <h2>Component composition</h2>
+//     </Toolbar>
+//     <h1>Hello React</h1>
+//     <ul>
+//       {this.state.items.map((item) => {
+//         return (
+//           <Item key={item.id} name={item.name} price={item.price}></Item>
+//         );
+//       })}
+//     </ul>
+//     <AddForm add={this.add} />
+//   </div>
+// );
+//   }
+// }
 
 export default App;
