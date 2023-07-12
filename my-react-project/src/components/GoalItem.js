@@ -1,8 +1,8 @@
-function GoalItem({ header, children }) {
+function GoalItem({ title, description }) {
   return (
     <>
-      <h3>{header}</h3>
-      <p>{children}</p>
+      <h3>{title}</h3>
+      <p>{description}</p>
     </>
   );
 }
