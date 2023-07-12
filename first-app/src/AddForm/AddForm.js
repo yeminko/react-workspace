@@ -11,11 +11,11 @@ const AddForm = (props) => {
     };
 
     return (
-        <div>
+        <>
             <input type="text" ref={nameRef} /> <br />
             <input type="text" ref={priceRef} /> <br />
             <button onClick={add}>Add</button>
-        </div>
+        </>
     );
 }
 

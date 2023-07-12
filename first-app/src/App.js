@@ -30,7 +30,7 @@ const App = (props) => {
   };
 
   return (
-    <div>
+    <>
       <Toolbar>
         <h1>Hello React</h1>
         <h2>Component composition</h2>
@@ -44,7 +44,7 @@ const App = (props) => {
         })}
       </ul>
       <AddForm add={add} />
-    </div>
+    </>
   );
 };
 
