@@ -1,6 +1,11 @@
-import Todo from "../models/todo.model";
+import { Todo } from "../models/todo.model";
 
-export default function TodoComponent(todo: Todo) {
+type TodoProps = {
+  todo: Todo;
+};
+
+export function TodoComponent(props: TodoProps) {
+  const todo = props.todo;
   return (
     <>
       <h3>{todo.name}</h3>

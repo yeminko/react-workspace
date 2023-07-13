@@ -1,7 +1,7 @@
-import Todo from "../models/todo.model";
-import TodoComponent from "./todo.component";
+import { Todo } from "../models/todo.model";
+import { TodoComponent } from "./todo.component";
 
-export default function TodoListComponent() {
+export function TodoListComponent() {
   const todoList: Todo[] = [
     new Todo(
       1,
@@ -48,7 +48,7 @@ export default function TodoListComponent() {
   return todoList.map((todo: Todo) => (
     <ul key={todo.id}>
       <li>
-        <TodoComponent {...todo} />
+        <TodoComponent todo={todo} />
       </li>
     </ul>
   ));
