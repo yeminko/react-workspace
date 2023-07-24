@@ -1,0 +1,78 @@
+{
+  "name": "react-nx-sample",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "./src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/react-nx-sample"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "react-nx-sample:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "react-nx-sample:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "react-nx-sample:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "react-nx-sample:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "react-nx-sample:build:development"
+        },
+        "production": {
+          "buildTarget": "react-nx-sample:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/react-nx-sample"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "coverage/react-nx-sample"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./src/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "react-nx-sample:build"
+      }
+    }
+  },
+  "tags": []
+}
