@@ -1,14 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
+import Products from './components/products/products';
 
 export function App() {
-  return (
-    <div>
-      <NxWelcome title="react-sample-app" />
-    </div>
-  );
+  return <Products />;
 }
 
 export default App;
