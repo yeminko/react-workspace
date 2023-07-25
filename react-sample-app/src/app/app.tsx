@@ -1,9 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import Products from './components/products/products';
+import Person, { PersonModel } from './components/person/person';
 
 export function App() {
-  return <Products />;
+  const person: PersonModel = {
+    name: 'John',
+    age: 36,
+    email: 'john@example.com',
+  };
+
+  return <Person person={person} />;
 }
 
 export default App;
