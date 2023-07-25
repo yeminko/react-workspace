@@ -1,13 +1,7 @@
-import Person, { PersonModel } from './components/person/person';
+import Header from './components/header/header';
 
 export function App() {
-  const person: PersonModel = {
-    name: 'John',
-    age: 36,
-    email: 'john@example.com',
-  };
-
-  return <Person person={person} />;
+  return <Header>This is just a string!</Header>;
 }
 
 export default App;
