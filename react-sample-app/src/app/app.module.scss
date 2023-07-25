@@ -1,1 +1,18 @@
-/* Your styles goes here. */
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.contentHeader {
+  color: white;
+  background: #5e18ae;
+}
+
+.weatherStatus {
+  font-size: 1.5em;
+  color: #5e18ae;
+}
+
+.highlight {
+  border: 1px solid;
+}
