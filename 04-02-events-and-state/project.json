@@ -1,0 +1,78 @@
+{
+  "name": "04-02-events-and-state",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "./src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/04-02-events-and-state"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "04-02-events-and-state:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "04-02-events-and-state:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "04-02-events-and-state:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "04-02-events-and-state:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "04-02-events-and-state:build:development"
+        },
+        "production": {
+          "buildTarget": "04-02-events-and-state:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/04-02-events-and-state"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "coverage/04-02-events-and-state"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./src/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "04-02-events-and-state:build"
+      }
+    }
+  },
+  "tags": []
+}
