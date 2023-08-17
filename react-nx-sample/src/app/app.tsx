@@ -1,13 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import Header from './components/header/header';
-import TodoList from './components/todo-list/todo-list';
+import Search from './components/search/search';
 
 export function App() {
   return (
     <div>
-      <Header>Welcome from React + Nx Project</Header>
-      <TodoList />
+      <Search />
     </div>
   );
 }
