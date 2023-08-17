@@ -1,10 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Search from './components/search/search';
+import Username from './components/username/username';
 
 export function App() {
   return (
     <div>
-      <Search />
+      <Username />
     </div>
   );
 }
