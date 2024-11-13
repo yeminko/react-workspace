@@ -1,35 +1,86 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useContext, useState } from "react";
+import Item from "./Item";
+import List from "./List";
+import Form from "./Form";
+import { AppContext } from "./ThemedApp";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const { mode, setMode } = useContext(AppContext);
+
+  const [data, setData] = useState([
+    { id: 1, content: "Hello, World!", name: "Alice" },
+    { id: 2, content: "React is fun.", name: "Bob" },
+    { id: 3, content: "Yay, interesting.", name: "Chris" },
+  ]);
+  const [showForm, setShowForm] = useState(false);
+
+  const remove = (id: number) => {
+    setData(data.filter((item) => item.id !== id));
+  };
+
+  const add = (content: string, name: string) => {
+    const id = data[data.length - 1].id + 1;
+    setData([...data, { id, content, name }]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div
+      style={{
+        minHeight: 1500,
+        background: mode === "dark" ? "black" : "white",
+        color: mode === "dark" ? "white" : "black",
+        paddingTop: 20,
+      }}
+    >
+      <div style={{ maxWidth: 600, margin: "0 auto" }}>
+        <h1
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            margin: "0 0 20px 0",
+          }}
+        >
+          Yaycha
+          <div>
+            <button
+              onClick={() => setShowForm(!showForm)}
+              style={{
+                width: 32,
+                height: 32,
+                borderRadius: 50,
+                border: "0 none",
+                background: showForm ? "#dc3545" : "#0d6efd",
+                color: "white",
+              }}
+            >
+              {showForm ? "×" : "+"}
+            </button>
+            <button
+              onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+              style={{
+                marginLeft: 8,
+                padding: "0 20px",
+                height: 32,
+                borderRadius: 32,
+                border: "0 none",
+                background: mode === "dark" ? "#333" : "#ddd",
+                color: mode === "dark" ? "white" : "black",
+              }}
+            >
+              {mode === "dark" ? "Light" : "Dark"}
+            </button>
+          </div>
+        </h1>
 
-export default App
+        {showForm && <Form add={add} />}
+
+        <List>
+          {data.map((item) => {
+            return <Item key={item.id} item={item} remove={remove} />;
+          })}
+        </List>
+      </div>
+    </div>
+  );
+}
