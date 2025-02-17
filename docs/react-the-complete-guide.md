@@ -34,6 +34,7 @@ const user = {
   name: "Max",
   age: 28,
 };
+
 <User {...user} />;
 
 // User component
