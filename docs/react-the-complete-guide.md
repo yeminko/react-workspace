@@ -47,3 +47,16 @@ const User = ({ name, age }) => {
   );
 };
 ```
+
+## Video 56: Use && for Conditional Rendering
+
+- Use `&&` for conditional rendering.
+- For example:
+
+```javascript
+const App = () => {
+  const showParagraph = true;
+
+  return <div>{showParagraph && <p>This is a paragraph</p>}</div>;
+};
+```
