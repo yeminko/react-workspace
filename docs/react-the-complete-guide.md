@@ -60,3 +60,7 @@ const App = () => {
   return <div>{showParagraph && <p>This is a paragraph</p>}</div>;
 };
 ```
+
+## Video 62: Using Fragments
+
+- Use `<>` and `</>` to wrap multiple elements in a component.
