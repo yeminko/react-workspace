@@ -64,3 +64,63 @@ const App = () => {
 ## Video 62: Using Fragments
 
 - Use `<>` and `</>` to wrap multiple elements in a component.
+
+## Video 66: Forwarding all props into rest parameter \*\*\*
+
+- Use `...CUSTOM_NAME` to forward all props into a component. For example
+
+```javascript
+const MyComponent = ({ title, children, ...props }) => {
+  return (
+    <section {...props}>
+      <h2>{title}</h2>
+      {children}
+    </section>
+  );
+};
+```
+
+## Video 67: Multiple JSX Slots \*\*\*
+
+- You can pass JSX elements as attributes to a component.
+
+```javascript
+const Tabs = ({ children, buttons }) => {
+  return (
+    <>
+      <menu>{buttons}</menu>
+      {children}
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Tabs
+      buttons={
+        <>
+          <button>Tab 1</button>
+          <button>Tab 2</button>
+        </>
+      }
+    >
+      <p>Content</p>
+    </Tabs>
+  );
+};
+```
+
+## Video 68: Dynamic component types \*\*\*
+
+- You can let them to use whatever HTML element they want.
+- Just remember to declare the variable name as Capital letter. (Because if you use lowercase, React will think it's a default HTML element)
+
+```javascript
+const MyComponent = ({ YourElement }) => {
+  return <YourElement>Content</YourElement>;
+};
+
+const App = () => {
+  return <MyComponent YourElement="h1" />;
+};
+```
