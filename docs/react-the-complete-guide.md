@@ -124,3 +124,19 @@ const App = () => {
   return <MyComponent YourElement="h1" />;
 };
 ```
+
+## Video 72: Public Folder vs Assets Folder
+
+- Use the `public` folder if it will be used in `index.html`.
+- Use the `src/assets` folder if it will be used in React components.
+
+## Video 78: Use function to update old state \*\*\*
+
+- If you want to update the state based on the old state, use a function to update it.
+
+```javascript
+const [counter, setCounter] = useState(0);
+const incrementCounter = () => {
+  setCounter((prevCounter) => prevCounter + 1);
+};
+```
