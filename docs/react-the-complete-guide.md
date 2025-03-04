@@ -140,3 +140,29 @@ const incrementCounter = () => {
   setCounter((prevCounter) => prevCounter + 1);
 };
 ```
+
+## Video 81: Update Obj/Array State Immutably \*\*\*
+
+- If you want to update an object or an array in the state, use the spread operator to create new ones.
+- This make ensure that the state isn't mutated before React re-renders schedule.
+
+```javascript
+const [user, setUser] = useState({ name: "Max", age: 28 });
+const updateUser = () => {
+  setUser((prevUser) => ({ ...prevUser, age: prevUser.age + 1 }));
+};
+```
+
+## Video 84: Be careful merging different states \*\*\*
+
+- State updates are asynchronous.
+- If you want to get a state inside another state, make sure you get the latest state.
+
+```javascript
+const [user, setUser] = useState({ name: "Max", age: 28 });
+const [log, setLog] = useState([]);
+const updateUser = () => {
+  setUser((prevUser) => ({ ...prevUser, age: prevUser.age + 1 }));
+  setLog((prevLog) => [...prevLog, `User age changed to ${user.age}`]);
+};
+```
