@@ -136,9 +136,9 @@ const App = () => {
 
 ```javascript
 const [counter, setCounter] = useState(0);
-const incrementCounter = () => {
+function incrementCounter() {
   setCounter((prevCounter) => prevCounter + 1);
-};
+}
 ```
 
 ## Video 81: Update Obj/Array State Immutably \*\*\*
@@ -165,4 +165,25 @@ const updateUser = () => {
   setUser((prevUser) => ({ ...prevUser, age: prevUser.age + 1 }));
   setLog((prevLog) => [...prevLog, `User age changed to ${user.age}`]);
 };
+```
+
+## Video 93: Nested Array Deep Copy
+
+```javascript
+const nestedArray = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+const newArray = [...nestedArray.map((arr) => [...arr])];
+```
+
+## Video 94: Making Object Key as Variable
+
+```javascript
+function createObj(key, value) {
+  return {
+    [key]: value,
+  };
+}
 ```
