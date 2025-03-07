@@ -187,3 +187,9 @@ function createObj(key, value) {
   };
 }
 ```
+
+## Video 111: Use ternary operator in dynamic class
+
+```javascript
+className={emailNotValid ? 'invalid' : undefined}
+```
