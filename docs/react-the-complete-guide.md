@@ -193,3 +193,8 @@ function createObj(key, value) {
 ```javascript
 className={emailNotValid ? 'invalid' : undefined}
 ```
+
+## Video 139: Using Refs (`useRef()`) \*\*\*
+
+- Use refs when you need to manage DOM directly.
+- Use refs when you need to maintain a value that persists across renders without causing re-renders. (Regular variables are reset when `useState()` is called.)
