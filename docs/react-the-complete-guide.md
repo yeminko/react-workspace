@@ -22,7 +22,7 @@ const App = () => {
 };
 ```
 
-## Video 45: Sperad/Destructure in Component Props
+## Video 45: Spread/Destructure in Component Props
 
 - Use spread operator to pass all props to a component.
 - Use destructuring to get props in a component.
@@ -112,7 +112,7 @@ const App = () => {
 
 ## Video 68: Dynamic component types \*\*\*
 
-- You can let them to use whatever HTML element they want.
+- You can let them use whatever HTML element they want.
 - Just remember to declare the variable name as Capital letter. (Because if you use lowercase, React will think it's a default HTML element)
 
 ```javascript
@@ -144,7 +144,7 @@ function incrementCounter() {
 ## Video 81: Update Obj/Array State Immutably \*\*\*
 
 - If you want to update an object or an array in the state, use the spread operator to create new ones.
-- This make ensure that the state isn't mutated before React re-renders schedule.
+- This make ensured that the state isn't mutated before React re-renders schedule.
 
 ```javascript
 const [user, setUser] = useState({ name: "Max", age: 28 });
@@ -198,3 +198,7 @@ className={emailNotValid ? 'invalid' : undefined}
 
 - Use refs when you need to manage DOM directly.
 - Use refs when you need to maintain a value that persists across renders without causing re-renders. (Regular variables are reset when `useState()` is called.)
+
+## Video 142: `useImperativeHandle()`
+
+- Use it when you need to customize `ref` instance of the component.
