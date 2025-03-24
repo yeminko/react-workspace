@@ -202,3 +202,7 @@ className={emailNotValid ? 'invalid' : undefined}
 ## Video 142: `useImperativeHandle()`
 
 - Use it when you need to customize `ref` instance of the component.
+
+## Video 147: Portals
+
+- Use portals to teleport a component to a different part of the DOM tree.
