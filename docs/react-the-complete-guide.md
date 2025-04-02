@@ -206,3 +206,19 @@ className={emailNotValid ? 'invalid' : undefined}
 ## Video 147: Portals
 
 - Use portals to teleport a component to a different part of the DOM tree.
+
+## Video 168,169: Using React Context
+
+In Version 19,
+
+- Wrapping context: `<CartContext></CartContext>`
+- Consuming context: `const cartCtx = use(CartContext)`
+
+In Earlier Version,
+
+- Wrapping context: `<CartContext.Provider></CartContext.Provider>`
+- Consuming context: `const cartCtx = useContext(CartContext)`
+
+Remember,
+
+- `useContext()` can only be written at the top level of the component. `use()` can write inside if condition.
