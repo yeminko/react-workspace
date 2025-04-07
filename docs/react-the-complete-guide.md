@@ -222,3 +222,8 @@ In Earlier Version,
 Remember,
 
 - `useContext()` can only be written at the top level of the component. `use()` can write inside if condition.
+
+## Video 175: Using `useReducer()`
+
+- When using `useReducer()`, you need to pass a reducer function and an initial state.
+- The reducer function should be declared outside the component because it doesn't need to be re-created on every render.
