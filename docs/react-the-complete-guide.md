@@ -227,3 +227,8 @@ Remember,
 
 - When using `useReducer()`, you need to pass a reducer function and an initial state.
 - The reducer function should be declared outside the component because it doesn't need to be re-created on every render.
+
+## Video 188: useEffect's Cleanup Function
+
+- Cleanup function run right before `useEffect` function run again.
+- Also run right before the component is dismount.
