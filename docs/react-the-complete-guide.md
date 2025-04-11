@@ -232,3 +232,11 @@ Remember,
 
 - Cleanup function run right before `useEffect` function run again.
 - Also run right before the component is dismount.
+
+## Video 189: Becareful with useEffect
+
+- If you use obj, function, or array as dependency, it can cause infinite loop.
+
+## Video 190: useCallback
+
+- Use `useCallback()` to memoize a function.
