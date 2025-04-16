@@ -239,4 +239,13 @@ Remember,
 
 ## Video 190: useCallback
 
-- Use `useCallback()` to memoize a function.
+- Memoizes a function to keep its reference stable.
+- Prevents unnecessary child re-renders when passing functions as props.
+- Only re-creates the function if dependencies change.
+- Mostly used with `useEffect`
+
+## Video 199: Auto unmount component with `key` prop
+
+- Use `key` prop to force React to unmount and remount a component.
+- If the `key` changes, React will unmount the component and remount it.
+- This is useful when you want to reset the state of a component.
