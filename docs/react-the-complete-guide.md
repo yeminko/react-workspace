@@ -247,5 +247,5 @@ Remember,
 ## Video 199: Auto unmount component with `key` prop
 
 - Use `key` prop to force React to unmount and remount a component.
-- If the `key` changes, React will unmount the component and remount it.
-- This is useful when you want to reset the state of a component.
+- **two children can't have the same `key`.** (Video 201)
+- **You can't extract `key` prop to use in a child component** (Video 202)
