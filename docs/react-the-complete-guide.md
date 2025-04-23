@@ -249,3 +249,9 @@ Remember,
 - Use `key` prop to force React to unmount and remount a component.
 - **two children can't have the same `key`.** (Video 201)
 - **You can't extract `key` prop to use in a child component** (Video 202)
+
+## Video 208: Memo
+
+- Memo checks component's props and re-renders only if they change.
+- Memo only trigger when parent component re-renders.
+- It costs performance.
