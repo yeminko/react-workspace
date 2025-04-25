@@ -255,3 +255,29 @@ Remember,
 - Memo checks component's props and re-renders only if they change.
 - Memo only trigger when parent component re-renders.
 - It costs performance.
+
+## Video 211: useMemo
+
+- Use `useMemo` not to recall a normal function everytime the component re-renders.
+- `useMemo` is used to prevent expensive calculations on every render.
+- `useCallback` is used to prevent re-creating functions on every render.
+
+## Video 212: Virtual DOM
+
+1. React render all components and get a virtual DOM.
+2. Compare new virtual DOM with the old one.
+3. Identify & apply changes to Real DOM.
+
+> Component optimization helps React by making it clear which parts do not need to re-render.
+
+## Video 213: Keys Matter
+
+- React tracks the position of components by their type and position.
+- It maps each component to the corresponding position in the state tree.
+- index shouldn't be used as a key if the list can be reordered or changed.
+
+> States are bound to the position of the component.
+
+## Video 214: Key for resetting
+
+- use `key` to reset component. Don't use `useEffect` to reset component.
