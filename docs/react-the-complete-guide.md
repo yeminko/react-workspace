@@ -281,3 +281,7 @@ Remember,
 ## Video 214: Key for resetting
 
 - use `key` to reset component. Don't use `useEffect` to reset component.
+
+## Video 216: state batch update
+
+- If you call `setState` multiple times in a single event handler, React will batch those updates together and re-render the component only once.
