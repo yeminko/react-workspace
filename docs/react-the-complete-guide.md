@@ -1,4 +1,11 @@
-# React the complete guide - Udemy
+# Important Notes
+
+```diff
+-  This note is moved to personal-note repository.
+-  This note is not updated anymore.
+```
+
+## React the complete guide - Udemy
 
 ## Summary
 
