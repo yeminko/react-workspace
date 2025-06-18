@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "items": [
+      {
+        "id": "m1",
+        "name": "Mac & Cheese",
+        "price": "8.99",
+        "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+        "image": "images/mac-and-cheese.jpg",
+        "quantity": 2
+      }
+    ],
+    "customer": {
+      "name": "fada",
+      "email": "dfa@adfad",
+      "street": "No.354 Pone Nyet Street",
+      "postal-code": "10240",
+      "city": "Bangkok"
+    },
+    "id": "395.0805744082877"
+  }
+]
