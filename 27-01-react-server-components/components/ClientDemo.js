@@ -19,6 +19,9 @@ export default function ClientDemo({ children }) {
         <span> Count: {count}</span>
       </p>
       {children}
+
+      {/* Doesn't work */}
+      {/* <RSCDemo />   */}
     </div>
   );
 }
