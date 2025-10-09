@@ -1,9 +1,19 @@
-export default function UsePromiseDemo({ users }) {
+"use client";
+
+import { use, useState } from "react";
+
+export default function UsePromiseDemo({ usersPromise }) {
+  const users = use(usersPromise);
+  const [count, setCount] = useState(0);
+
   return (
     <div className="rsc">
       <h2>RSC with Data Fetching</h2>
       <p>
         Uses <strong>async / await</strong> for data fetching.
+      </p>
+      <p>
+        <button onClick={() => setCount((c) => c + 1)}>Count: {count}</button>
       </p>
       <ul>
         {users.map((user) => (
