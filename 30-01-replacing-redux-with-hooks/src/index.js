@@ -5,12 +5,15 @@ import ProductsProvider from "./context/product-context";
 
 import "./index.css";
 import App from "./App";
+import configureProductStore from "./hook-store/product-store";
+
+configureProductStore();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ProductsProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ProductsProvider>
+  // <ProductsProvider>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  // </ProductsProvider>
 );
