@@ -6,7 +6,7 @@ let listeners = [];
 
 let actions = {};
 
-export const useStore = () => {
+export const useStore = (shouldListen = true) => {
   const setSate = useState(globalState)[1];
 
   const dispatch = (actionIdentifier, payload) => {
@@ -18,12 +18,16 @@ export const useStore = () => {
   };
 
   useEffect(() => {
-    listeners.push(setSate);
+    if (shouldListen) {
+      listeners.push(setSate);
+    }
 
     return () => {
-      listeners = listeners.filter((li) => li !== setSate);
+      if (shouldListen) {
+        listeners = listeners.filter((li) => li !== setSate);
+      }
     };
-  }, [setSate]);
+  }, [setSate, shouldListen]);
 
   return [globalState, dispatch];
 };
