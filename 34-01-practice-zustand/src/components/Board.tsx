@@ -2,8 +2,17 @@ import useGameStore from "../store/useGameStore";
 import Square from "./Square";
 
 export default function Board() {
+  const xIsNext = useGameStore((state) => state.xIsNext);
   const squares = useGameStore((state) => state.squares);
-  const setSquare = useGameStore((state) => state.setSquare);
+  const setSquares = useGameStore((state) => state.setSquares);
+  const player = xIsNext ? "X" : "O";
+
+  function handleClick(i: number) {
+    if (squares[i]) return;
+    const nextSquares = squares.slice();
+    nextSquares[i] = player;
+    setSquares(nextSquares);
+  }
 
   return (
     <div
@@ -16,15 +25,13 @@ export default function Board() {
         border: "1px solid #999",
       }}
     >
-      <Square value="1" />
-      <Square value="2" />
-      <Square value="3" />
-      <Square value="4" />
-      <Square value="5" />
-      <Square value="6" />
-      <Square value="7" />
-      <Square value="8" />
-      <Square value="9" />
+      {squares.map((square, squareIndex) => (
+        <Square
+          key={squareIndex}
+          value={square}
+          onSquareClick={() => handleClick(squareIndex)}
+        />
+      ))}
     </div>
   );
 }

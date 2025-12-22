@@ -5,9 +5,14 @@ const useGameStore = create(
   combine(
     {
       squares: Array(9).fill(null),
+      xIsNext: true,
     },
     (set) => ({
-      setSquare: (nextSquares: any) => {
+      setSquares: (
+        nextSquares:
+          | (null | string)[]
+          | ((squares: (null | string)[]) => (null | string)[])
+      ) => {
         set((state) => ({
           squares:
             typeof nextSquares === "function"
@@ -15,8 +20,16 @@ const useGameStore = create(
               : nextSquares,
         }));
       },
-    })
-  )
-);
+      setXIsNext: (nextXIsNext: boolean | ((xIsNext: boolean) => boolean)) => {
+        set((state) => ({
+          xIsNext:
+        typeof nextXIsNext === 'function'
+          ? nextXIsNext(state.xIsNext)
+          : nextXIsNext,
+        }));
+      },
+        })
+      )
+    );
 
 export default useGameStore;
