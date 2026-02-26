@@ -1,13 +1,5 @@
-import AnotherHeader from "./components/AnotherHeader";
-import Header from "./components/Header";
-import MyComponent from "./components/MyComponent";
+import Server from "./components/Server";
 
 export default function App() {
-  return (
-    <>
-      {/* <Header />
-      <AnotherHeader /> */}
-      <MyComponent />
-    </>
-  );
+  return <Server />;
 }
