@@ -1,5 +1,5 @@
-import Server from "./components/Server";
+import Products from "./components/Products";
 
 export default function App() {
-  return <Server />;
+  return <Products />;
 }
