@@ -1,5 +1,5 @@
-import Products from "./components/Products";
+import Button from "./components/Button";
 
 export default function App() {
-  return <Products />;
+  return <Button />;
 }
