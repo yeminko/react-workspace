@@ -5,7 +5,7 @@ export default function Counter() {
 
   function increment() {
     setCount(count + 1);
-
+    setCount(count + 1); // stimute multiple updates in a row
     // setCount(count + 1); // stimute multiple updates in a row
     // setCount((prevCount) => prevCount + 1); // stimute multiple updates in a row
   }
