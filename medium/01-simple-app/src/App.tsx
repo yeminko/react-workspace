@@ -1,5 +1,5 @@
-import Counter from "./components/Counter";
+import Parent from "./components/Parent";
 
 export default function App() {
-  return <Counter />;
+  return <Parent />;
 }
