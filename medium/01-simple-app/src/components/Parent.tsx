@@ -1,10 +1,14 @@
-import Children from "./Children";
+import Child from "./Child";
 
 export default function Parent() {
+  const username = "John Doe";
+
   return (
     <>
       <h1>Parent Component</h1>
-      <Children username="John Doe" />
+      <Child username={username}>
+        <p>Welcome</p>
+      </Child>
     </>
   );
 }
