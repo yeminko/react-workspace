@@ -1,15 +1,14 @@
 import Child from "./Child";
 
 export default function Parent() {
-  const username = "John Doe";
+  function handleEat(food: string): string {
+    return `Yum! I ate a ${food}.`;
+  }
 
   return (
     <>
       <h1>Parent Component</h1>
-      <Child username={username}>
-        {/* Passing an element as children */}
-        <p>Welcome</p>
-      </Child>
+      <Child onEat={handleEat} />
     </>
   );
 }

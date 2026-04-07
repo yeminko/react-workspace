@@ -1,16 +1,17 @@
-import type { ReactNode } from "react";
-
 interface Props {
-  username: string;
-  children: ReactNode; // Define the type for children
+  onEat: (food: string) => string;
 }
 
-export default function Child({ username, children }: Props) {
+export default function Child({ onEat }: Props) {
+  function handleClick() {
+    const result = onEat("apple");
+    console.log(result);
+  }
+
   return (
     <>
-      <h1>{username}</h1>
-      {/* Render the children */}
-      <div>{children}</div>
+      <h2>Child Component</h2>
+      <button onClick={handleClick}>Eat</button>
     </>
   );
 }
