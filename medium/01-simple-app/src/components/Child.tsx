@@ -1,17 +1,11 @@
+import { useState } from "react";
+
 interface Props {
-  onEat: (food: string) => string;
+  status: string;
 }
 
-export default function Child({ onEat }: Props) {
-  function handleClick() {
-    const result = onEat("apple");
-    console.log(result);
-  }
+export default function Child({ status }: Props) {
+  const [childStatus, setChildStatus] = useState(status);
 
-  return (
-    <>
-      <h2>Child Component</h2>
-      <button onClick={handleClick}>Eat</button>
-    </>
-  );
+  return <h2>Child Component Status: {childStatus}</h2>;
 }
