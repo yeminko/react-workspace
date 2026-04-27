@@ -1,5 +1,5 @@
-import Parent from "./components/Parent";
+import Fruits from "./components/Fruits";
 
 export default function App() {
-  return <Parent />;
+  return <Fruits />;
 }
