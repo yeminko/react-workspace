@@ -1,5 +1,5 @@
-import Fruits from "./components/Fruits";
+import UsernameInput from "./components/UsernameInput";
 
 export default function App() {
-  return <Fruits />;
+  return <UsernameInput />;
 }
