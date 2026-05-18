@@ -3,16 +3,16 @@ import { useRef } from "react";
 export default function UsernameInput() {
   const inputElement = useRef<HTMLInputElement>(null);
 
-  function handleValue() {
+  function updateValue() {
     if (inputElement.current) {
-      alert(inputElement.current.value);
+      inputElement.current.value = "Hello World";
     }
   }
 
   return (
     <>
       <input ref={inputElement} type="text" placeholder="Enter name" />
-      <button onClick={handleValue}>Get Value</button>
+      <button onClick={updateValue}>Update Value</button>
     </>
   );
 }
