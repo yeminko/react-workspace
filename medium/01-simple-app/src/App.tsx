@@ -1,5 +1,5 @@
-import Login from "./components/Login";
+import UsernameInput from "./components/UsernameInput";
 
 export default function App() {
-  return <Login />;
+  return <UsernameInput />;
 }
