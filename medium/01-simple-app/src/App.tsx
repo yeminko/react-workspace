@@ -1,5 +1,5 @@
-import UsernameInput from "./components/UsernameInput";
+import Timer from "./components/Timer";
 
 export default function App() {
-  return <UsernameInput />;
+  return <Timer />;
 }

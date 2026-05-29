@@ -1,7 +1,29 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Timer() {
-  const inputElement = useRef<HTMLInputElement>(null);
+  const [now, setNow] = useState(0);
+  const intervalRef = useRef<number | null>(null);
 
-  return <input ref={inputElement} type="text" placeholder="Enter name" />;
+  function handleStart() {
+    reset();
+    intervalRef.current = setInterval(() => {
+      setNow((now) => now + 1);
+    }, 1);
+  }
+
+  function reset() {
+    if (intervalRef.current) {
+      setNow(0);
+      clearInterval(intervalRef.current);
+    }
+  }
+
+  return (
+    <>
+      <h1>Timer</h1>
+      <h3>{now} milliseconds</h3>
+      <button onClick={handleStart}>Start</button>
+      <button onClick={reset}>Reset</button>
+    </>
+  );
 }
