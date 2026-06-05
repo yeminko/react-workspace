@@ -1,35 +1,29 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const usernameRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
   const [data, setData] = useState("");
 
   function handleReset() {
-    setUsername("");
-    setPassword("");
+    if (usernameRef.current) usernameRef.current.value = "";
+    if (passwordRef.current) passwordRef.current.value = "";
     setData("");
   }
 
   function handleLogin() {
+    const username = usernameRef.current?.value || "";
+    const password = passwordRef.current?.value || "";
     setData(`Username: ${username}, Password: ${password}`);
   }
 
   return (
     <>
       <h2>Login</h2>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
+      <input type="text" ref={usernameRef} />
       <br />
 
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <input type="password" ref={passwordRef} />
       <p>
         <button type="button" onClick={handleLogin}>
           Login

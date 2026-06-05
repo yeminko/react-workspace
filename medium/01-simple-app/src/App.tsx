@@ -1,5 +1,5 @@
-import Timer from "./components/Timer";
+import Login from "./components/Login";
 
 export default function App() {
-  return <Timer />;
+  return <Login />;
 }
