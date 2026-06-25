@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
+
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+}
+
 export default function Products() {
-  const products = [
-    { id: 1, name: "Product 1", price: 10 },
-    { id: 2, name: "Product 2", price: 20 },
-    { id: 3, name: "Product 3", price: 30 },
-  ];
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products));
+  }, []);
 
   return (
     <div>
@@ -11,7 +21,7 @@ export default function Products() {
       <ul>
         {products.map((product) => (
           <li key={product.id}>
-            {product.name} - ${product.price}
+            {product.title} - ${product.price}
           </li>
         ))}
       </ul>

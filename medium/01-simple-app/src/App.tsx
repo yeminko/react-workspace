@@ -1,5 +1,5 @@
-import ComplexHeader from "./components/ComplexHeader";
+import Products from "./components/Products";
 
 export default function App() {
-  return <ComplexHeader />;
+  return <Products />;
 }
