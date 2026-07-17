@@ -1,5 +1,5 @@
-import Products from "./components/Products";
+import ChatRooms from "./components/ChatRooms";
 
 export default function App() {
-  return <Products />;
+  return <ChatRooms />;
 }

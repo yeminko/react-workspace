@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatRooms {
+  display: flex;
+  gap: 1em;
+}
+
+.chatRoom {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.chatRoom:hover {
+  background-color: #f0f0f0;
+}
