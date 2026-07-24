@@ -1,5 +1,8 @@
-import ChatRooms from "./components/ChatRooms";
-
+import CleanUpEffect from "./components/useEffects/CleanUpEffect";
 export default function App() {
-  return <ChatRooms />;
+  return (
+    <div>
+      <CleanUpEffect />
+    </div>
+  );
 }
