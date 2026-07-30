@@ -1,8 +1,9 @@
-import CleanUpEffect from "./components/useEffects/CleanUpEffect";
+import RunWhenDependencyChange from "./components/useEffects/RunWhenDependencyChange";
+
 export default function App() {
   return (
     <div>
-      <CleanUpEffect />
+      <RunWhenDependencyChange />
     </div>
   );
 }

@@ -29,7 +29,7 @@ export function BuggyChatRoom() {
   }, [roomId]);
 
   return (
-    <div style={{ padding: 20, fontFamily: "sans-serif" }}>
+    <div style={{ padding: 20 }}>
       <h2>Current Room: {roomId}</h2>
 
       <div style={{ gap: 10, display: "flex", marginBottom: 20 }}>
