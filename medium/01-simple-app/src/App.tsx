@@ -1,9 +1,9 @@
-import RunWhenDependencyChange from "./components/useEffects/RunWhenDependencyChange";
+import { InfinityLoop } from "./components/useCallback/InfinityLoop";
 
 export default function App() {
   return (
     <div>
-      <RunWhenDependencyChange />
+      <InfinityLoop />
     </div>
   );
 }
