@@ -1,9 +1,5 @@
-import { InfinityLoop } from "./components/useCallback/InfinityLoop";
+import Parent from "./components/memo/Parent";
 
 export default function App() {
-  return (
-    <div>
-      <InfinityLoop />
-    </div>
-  );
+  return <Parent />;
 }
