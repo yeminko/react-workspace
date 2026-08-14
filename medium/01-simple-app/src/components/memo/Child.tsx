@@ -1,9 +1,11 @@
+import { memo } from "react";
+
 interface Props {
-  status: string;
+  print: (text: string) => void;
 }
 
-export default function Child({ status }: Props) {
+export default memo(function Child({ print }: Props) {
   console.log("Child rendered");
 
-  return <h1>Status: {status}</h1>;
-}
+  return <button onClick={() => print("Hello!")}>Print Hello!</button>;
+});
