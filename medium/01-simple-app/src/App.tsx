@@ -1,5 +1,5 @@
-import Parent from "./components/memo/Parent";
+import Products from "./components/useMemo/Products";
 
 export default function App() {
-  return <Parent />;
+  return <Products />;
 }
