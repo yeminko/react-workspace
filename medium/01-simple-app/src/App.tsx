@@ -1,5 +1,5 @@
-import Products from "./components/useMemo/Products";
+import Server from "./components/useReducer/Server";
 
 export default function App() {
-  return <Products />;
+  return <Server />;
 }
