@@ -1,26 +1,20 @@
 import { useReducer } from "react";
 
-type Status = "Loading" | "Online" | "Offline";
+type Action = {
+  type: "UPDATE_STATUS";
+  payload: string;
+};
 
-type Action =
-  | { type: "CHANGE_TO_ONLINE" }
-  | { type: "CHANGE_TO_OFFLINE" }
-  | { type: "CHANGE_TO_LOADING" };
-
-function statusReducer(state: Status, action: Action): Status {
+function statusReducer(state: string, action: Action): string {
   switch (action.type) {
-    case "CHANGE_TO_ONLINE":
-      return "Online";
-    case "CHANGE_TO_OFFLINE":
-      return "Offline";
-    case "CHANGE_TO_LOADING":
-      return "Loading";
+    case "UPDATE_STATUS":
+      return action.payload;
     default:
       return state;
   }
 }
 
-const initialStatus: Status = "Loading";
+const initialStatus = "Loading";
 
 export default function Server() {
   const [status, dispatch] = useReducer(statusReducer, initialStatus);
@@ -28,13 +22,19 @@ export default function Server() {
   return (
     <>
       <h1>Server Status: {status}</h1>
-      <button onClick={() => dispatch({ type: "CHANGE_TO_ONLINE" })}>
+      <button
+        onClick={() => dispatch({ type: "UPDATE_STATUS", payload: "Online" })}
+      >
         Online
       </button>
-      <button onClick={() => dispatch({ type: "CHANGE_TO_OFFLINE" })}>
+      <button
+        onClick={() => dispatch({ type: "UPDATE_STATUS", payload: "Offline" })}
+      >
         Offline
       </button>
-      <button onClick={() => dispatch({ type: "CHANGE_TO_LOADING" })}>
+      <button
+        onClick={() => dispatch({ type: "UPDATE_STATUS", payload: "Loading" })}
+      >
         Loading
       </button>
     </>
