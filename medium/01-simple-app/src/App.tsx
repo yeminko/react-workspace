@@ -1,5 +1,5 @@
-import Server from "./components/useReducer/ServerWithReducer";
+import Product from "./components/usingContext/Product";
 
 export default function App() {
-  return <Server />;
+  return <Product />;
 }
