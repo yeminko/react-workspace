@@ -1,5 +1,12 @@
-import Product from "./components/usingContext/Product";
+import GetProducts from "./components/usingContext/GetProducts";
+import Products from "./components/usingContext/Products";
+import { ProductContextProvider } from "./context/ProductContext";
 
 export default function App() {
-  return <Product />;
+  return (
+    <ProductContextProvider>
+      <Products />
+      <GetProducts />
+    </ProductContextProvider>
+  );
 }
