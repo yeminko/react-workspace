@@ -14,7 +14,7 @@ export default function Messenger() {
         </button>
       ))}
 
-      <MessageForm recipient={recipient} />
+      <MessageForm key={recipient} recipient={recipient} />
     </main>
   );
 }
