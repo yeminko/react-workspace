@@ -1,5 +1,5 @@
-import Messenger from "./components/resetWithKey/Messenger";
+import House from "./components/usingRefToReduceDependencies/House";
 
 export default function App() {
-  return <Messenger />;
+  return <House />;
 }
