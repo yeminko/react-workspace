@@ -1,36 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import Chatroom from "./Chatroom";
 
 export default function Example() {
-  const [count, setCount] = useState(0);
-  const countRef = useRef(count);
-
-  function handleIncrement() {
-    const nextCount = count + 1;
-    countRef.current = nextCount;
-    setCount(nextCount);
-  }
-
-  useEffect(() => {
-    console.log("Starting interval");
-
-    const intervalId = window.setInterval(() => {
-      console.log("Latest count:", countRef.current);
-    }, 1000);
-
-    return () => {
-      window.clearInterval(intervalId);
-      console.log("Stopping interval");
-    };
-  }, []);
+  const [roomId, setRoomId] = useState("1");
+  const [nightTheme, setNightTheme] = useState(false);
 
   return (
-    <div>
-      <h1>Use a ref to read the latest value in an effect</h1>
-      <p>
-        The interval logs the latest count every second. Increment the count and
-        check the console: the interval keeps running without being restarted.
-      </p>
-      <button onClick={handleIncrement}>Count: {count}</button>
-    </div>
+    <>
+      <select value={roomId} onChange={(e) => setRoomId(e.target.value)}>
+        <option value="1">Room 1</option>
+        <option value="2">Room 2</option>
+        <option value="3">Room 3</option>
+      </select>
+      <br />
+      <label>Dark Theme: </label>
+      <input
+        type="checkbox"
+        checked={nightTheme}
+        onChange={(e) => setNightTheme(e.target.checked)}
+      />
+      <Chatroom roomId={roomId} nightTheme={nightTheme} />
+    </>
   );
 }
