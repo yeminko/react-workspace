@@ -11,9 +11,9 @@ export default function Chatroom({ roomId, nightTheme }: Props) {
 
   useEffect(() => {
     if (darkThemeRef.current) {
-      alert(`Good night from room ${roomId}`);
+      console.log(`Good night from room ${roomId}`);
     } else {
-      alert(`Good day from room ${roomId}.`);
+      console.log(`Good day from room ${roomId}.`);
     }
   }, [roomId]);
 
