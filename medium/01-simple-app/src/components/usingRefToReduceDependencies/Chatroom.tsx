@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 interface Props {
   roomId: string;
@@ -6,16 +6,13 @@ interface Props {
 }
 
 export default function Chatroom({ roomId, nightTheme }: Props) {
-  const darkThemeRef = useRef(nightTheme);
-  darkThemeRef.current = nightTheme;
-
   useEffect(() => {
-    if (darkThemeRef.current) {
+    if (nightTheme) {
       console.log(`Good night from room ${roomId}`);
     } else {
       console.log(`Good day from room ${roomId}.`);
     }
-  }, [roomId]);
+  }, [roomId, nightTheme]);
 
   return <div>You are in room {roomId}</div>;
 }
