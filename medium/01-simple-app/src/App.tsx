@@ -1,5 +1,5 @@
-import Example from "./components/usingRefToReduceDependencies/Example";
+import Chat from "./components/usingRefToReduceDependencies/Chat";
 
 export default function App() {
-  return <Example />;
+  return <Chat />;
 }

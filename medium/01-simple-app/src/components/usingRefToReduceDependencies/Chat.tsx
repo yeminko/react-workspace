@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Chatroom from "./Chatroom";
 
-export default function Example() {
+export default function Chat() {
   const [roomId, setRoomId] = useState("1");
   const [nightTheme, setNightTheme] = useState(false);
 
